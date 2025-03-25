@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+<h1>User Dashboard</h1>
+<p th:text="${message}"></p>
+<div sec:authorize="hasRole('USER')">
+    <a href="/user/profile">View Profile</a><br>
+    <a href="/shared/content">Shared Content</a><br>
+    <a href="/restricted/report">Restricted Report</a><br>
+    <a href="/multi-role/task">Multi-Role Task</a>
+</div>
+<div sec:authorize="hasRole('ADMIN')">
+    <a href="/admin/dashboard">Admin Dashboard</a>
+</div>
+<a href="/auth/logout">Logout</a>
+</body>
+</html>
