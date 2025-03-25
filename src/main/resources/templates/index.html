@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>User Profile</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/css/styles.css" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1>User Profile</h1>
-<p th:text="${message}"></p>
-<a href="/user/dashboard">Back to Dashboard</a>
-<a href="/logout">Logout</a>
+<div class="container">
+    <h1>Welcome</h1>
+    <div class="nav-links">
+        <a href="/login">Login</a>
+    </div>
+</div>
 </body>
 </html>
