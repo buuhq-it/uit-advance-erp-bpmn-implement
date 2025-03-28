@@ -27,7 +27,7 @@ public class ProcessEngineConfig {
         config.setAsyncExecutorActivate(true);
         config.setJobExecutorActivate(false);
 
-        log.info("start SpringProcessEngineConfiguration BEAN SUCCESS!!!" + config);
+        log.info("start SpringProcessEngineConfiguration BEAN SUCCESS!!!{}", config);
 
         return config;
     }

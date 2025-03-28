@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/dashboard")
 public class DashboardController {
-    @GetMapping("/")
-    public String home() {
-        return "index";
+//    @GetMapping("/")
+    public String index() {
+        return "dashboard";
     }
 }

@@ -2,22 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login</title>
-<!--    <link rel="stylesheet" href="/css/styles.css" th:href="@{/css/styles.css}">-->
+    <style>
+        label, input {
+            display: block;
+        }
+        #submit, label{
+            margin-top: 0.5em;
+        }
+    </style>
 </head>
 <body>
-
     <h1>Login</h1>
     <div th:if="${param.error}">Invalid username or password.</div>
     <div th:if="${param.logout}">You have been logged out.</div>
     <form method="post" action="/auth/login">
-        <label>Username: </label> <br>
-        <input type="text" name="username" placeholder="Username"> <br>
+        <label>Username: </label>
+        <input type="text" name="username" placeholder="Username">
 
-        <label>Password: </label> <br>
-        <input type="password" name="password" placeholder="Password"> <br>
+        <label>Password: </label>
+        <input type="password" name="password" placeholder="Password">
 
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-        <input type="submit" value="Login">
+        <input id="submit" type="submit" value="Login">
     </form>
 
 </body>

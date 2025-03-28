@@ -9,7 +9,7 @@
 <body>
 <div class="container mt-5">
     <div class="text-center">
-        <h1>Welcome, <span th:text="${username}"></span>!</h1>
+        <h1>Welcome, <span th:text="${#authentication.name}"></span>!</h1>
         <p class="lead">You are logged in successfully.</p>
         <a href="/auth/logout" class="btn btn-danger">Logout</a>
     </div>
