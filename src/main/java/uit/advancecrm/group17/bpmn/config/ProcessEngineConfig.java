@@ -1,6 +1,7 @@
 package uit.advancecrm.group17.bpmn.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.activiti.spring.ProcessEngineFactoryBean;
 import org.activiti.spring.SpringProcessEngineConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,5 +31,14 @@ public class ProcessEngineConfig {
         log.info("start SpringProcessEngineConfiguration BEAN SUCCESS!!!{}", config);
 
         return config;
+    }
+
+    @Bean
+    public ProcessEngineFactoryBean processEngine(
+            SpringProcessEngineConfiguration processEngineConfiguration) {
+        ProcessEngineFactoryBean factoryBean = new ProcessEngineFactoryBean();
+        factoryBean.setProcessEngineConfiguration(processEngineConfiguration);
+
+        return factoryBean;
     }
 }
